@@ -167,7 +167,11 @@ var getRandomArbitrary = function() {
 function finder(arr){
   var randomNumber = getRandomArbitrary();
   for(let i = 0; i < arr.length; i++){
-
+    if(randomNumber == arr[i]){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
 
@@ -202,6 +206,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 function removeItem(myGroceryList, item){
 
+  for(let i = 0; i < myGroceryList.length; i++){
+    if(item == myGroceryList[i]){
+      myGroceryList.splice(myGroceryList[i], 1);
+
+    }
+  }
+  return myGroceryList;
+
+}
+
+function addItem(myGroceryList, item){
+  myGroceryList.push(item);
+  return myGroceryList;
 }
 
 ////////// PROBLEM 9 //////////
@@ -266,7 +283,13 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }else{
+    return arr2;
+  }
+}
 
 
 
@@ -278,7 +301,12 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2){
+  let bothArray = [];
+  for(let i = 0; i < arr1.length; i++){
+    
+  }
+}
 
 
 
@@ -319,7 +347,15 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+function updateEmployeeList(employee){
+  devMountainEmployees.push(employee);
+}
+updateEmployeeList(joe);
+updateEmployeeList(cahlan);
+updateEmployeeList(ryan);
+updateEmployeeList(colt);
+
+
 
 
 
@@ -328,7 +364,15 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for(let i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name == 'Cahlan'){
+
+    devMountainEmployees.splice(1, 1);
+    console.log(devMountainEmployees);
+  }
+}
+// console.log(devMountainEmployees);
+
 
 
 
@@ -340,7 +384,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [];
 
 
 
@@ -361,9 +405,27 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
 
-
+users = [
+  {
+    name: 'Mark McIver',
+    email: 'mark.mciver@devmounta.in',
+    password: 'hunter2',
+    username: 'ihazcode'
+  },
+  {
+    name: 'Jed McIver',
+    email: 'jed.mciver@devmounta.in',
+    password: 'hunter2',
+    username: 'jeduser'
+  },
+  {
+    name: 'Kim McIver',
+    email: 'Kim.mciver@devmounta.in',
+    password: 'hunter2',
+    username: 'kimuser'
+  }
+];
 
 /*
   Now you have a very common data structure. 
@@ -375,7 +437,13 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+for(let i = 0; i < users.length; i++){
+  users = users;
+  if(users[i].email == 'mark.mciver@devmounta.in'){
+    users.splice(users[i], 1);
+  }
+}
+
 
 
 
